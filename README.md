@@ -1,10 +1,10 @@
-# Serverless Boilerplate with Serverless Framework 3, ExpressJS, TypeScript, Prisma and MongoDB [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
+# Serverless Boilerplate with Serverless Framework 3, Fastify, TypeScript, Prisma and MongoDB [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
 
 <p align="center">
   <a href="https://creativedesignsguru.com/"><img src="https://creativedesignsguru.com/assets/images/themes/serverless-boilerplate-expressjs-typescript.png" alt="Serverless Boilerplate Banner"></a>
 </p>
 
-🚀 Serverless Boilerplate is starter code for your backend and REST API based on Serverless framework with Express JS, TypeScript, Prisma and MongoDB. ⚡️ Made with Serverless framework, Live reload, Offline support, ExpressJS, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Commitlint, Dotenv, VSCode.
+🚀 Serverless Boilerplate is starter code for your backend and REST API based on Serverless framework with Fastify, TypeScript, Prisma and MongoDB. ⚡️ Made with Serverless framework, Live reload, Offline support, Fastify, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Commitlint, Dotenv, VSCode.
 
 Clone this project and use it to create your own backend.
 
@@ -86,7 +86,7 @@ Clone this project and use it to create your own backend.
 Developer experience first:
 
 - 🔥 [Serverless framework](https://www.serverless.com)
-- ⚡️ [ExpressJS](http://expressjs.com)
+- ⚡️ [Fastify](https://fastify.dev)
 - ✅ Type checking [TypeScript](https://www.typescriptlang.org) with strict mode
 - 📚 ORM with [Prisma](https://www.prisma.io)
 - 💖 Database with [MongoDB](https://www.mongodb.com/) with in-memory database for local development
@@ -134,7 +134,7 @@ Find more [Nextjs Templates](https://creativedesignsguru.com/category/nextjs/).
 Run the following command on your local environment:
 
 ```
-git clone --depth=1 https://github.com/ixartz/Serverless-Boilerplate-Express-TypeScript.git my-project-name
+git clone --depth=1 https://github.com/oz6269/Serverless-Boilerplate-Fastify-TypeScript.git my-project-name
 cd my-project-name
 yarn install
 ```

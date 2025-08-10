@@ -1,35 +1,33 @@
-import 'express-async-errors';
-
+import helmet from '@fastify/helmet';
 import { PrismaClient } from '@prisma/client';
-import express, { json } from 'express';
-import helmet from 'helmet';
+import type { FastifyReply, FastifyRequest } from 'fastify';
+import fastify from 'fastify';
 
-const app = express();
-app.use(json());
-app.use(helmet());
+const app = fastify();
+
+// Security headers
+app.register(helmet);
 
 const prisma = new PrismaClient();
 
-app.get('/', (_, res) => {
-  res.json({
-    msg: 'Hello World',
-  });
-});
+app.get('/', async () => ({
+  msg: 'Hello World',
+}));
 
-app.get('/prisma', async (_, res) => {
+app.get('/prisma', async () => {
   await prisma.user.create({
     data: {
       email: 'random@example.com',
     },
   });
 
-  res.json({
+  return {
     msg: 'Add a new unique user without duplicate',
-  });
+  };
 });
 
-app.use((_, res, _2) => {
-  res.status(404).json({ error: 'NOT FOUND' });
+app.setNotFoundHandler((_: FastifyRequest, reply: FastifyReply) => {
+  reply.code(404).send({ error: 'NOT FOUND' });
 });
 
 export { app };

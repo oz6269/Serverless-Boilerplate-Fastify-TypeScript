@@ -7,26 +7,18 @@ import { prismaDbPush } from './prisma';
 let mongodb: MongoMemoryReplSet | null = null;
 
 (async () => {
-  mongodb = new MongoMemoryReplSet({
-    instanceOpts: [
-      {
-        port: 27017,
-        storageEngine: 'wiredTiger',
-      },
-      {
-        port: 27018,
-        storageEngine: 'wiredTiger',
-      },
-    ],
+  // Use a single-node replica set so writeConcern("majority") succeeds immediately.
+  mongodb = await MongoMemoryReplSet.create({
+    replSet: {
+      count: 1,
+      storageEngine: 'wiredTiger',
+    },
   });
 
-  await mongodb.start();
+  // Provide the db name directly; create() waits for PRIMARY.
+  process.env.DATABASE_URL = mongodb.getUri('modernmern');
 
-  process.env.DATABASE_URL = mongodb
-    .getUri()
-    .replace('/?replicaSet=', `/modernmern?replicaSet=`);
-
-  await pRetry(prismaDbPush, { retries: 5 });
+  await pRetry(prismaDbPush, { retries: 10 });
 
   console.log(`MongoDB ready - endpoint: ${mongodb.getUri()}`);
 })();
