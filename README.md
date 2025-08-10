@@ -127,7 +127,7 @@ Build your SaaS product faster with [Node.js SaaS Boilerplate](https://modernmer
 Find more [Nextjs Templates](https://creativedesignsguru.com/category/nextjs/).
 ### Requirements
 
-- Node.js 16+ and npm
+- Node.js 16+ and Yarn (Yarn 3+ via Corepack is supported)
 
 ### Getting started
 
@@ -136,13 +136,13 @@ Run the following command on your local environment:
 ```
 git clone --depth=1 https://github.com/ixartz/Serverless-Boilerplate-Express-TypeScript.git my-project-name
 cd my-project-name
-npm install
+yarn install
 ```
 
 Then, you can run locally in development mode with live reload:
 
 ```
-npm run dev
+yarn dev
 ```
 
 The local server is now listening at http://localhost:4000
@@ -152,7 +152,7 @@ The local server is now listening at http://localhost:4000
 You can deploy to production with the following command:
 
 ```
-npm run deploy-prod
+yarn deploy-prod
 ```
 
 ### VSCode information (optional)

@@ -22,9 +22,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm ci
-      - run: npm run test:dev
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
+      - run: yarn test:dev
 
   test:
     strategy:
@@ -42,18 +42,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm ci
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
 
       - if: github.event_name == 'pull_request'
         name: Validate all commits from PR
         run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       - name: Linter
-        run: npm run lint
+        run: yarn lint
 
       - name: Type checking
-        run: npm run check-types
+        run: yarn check-types
 
       - name: Run unit tests
-        run: npm run test
+        run: yarn test
