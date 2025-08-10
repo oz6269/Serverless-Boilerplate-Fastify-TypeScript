@@ -1,10 +1,21 @@
 # Serverless Boilerplate with Serverless Framework 3, Fastify, TypeScript, Prisma and MongoDB [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
 
+> **Note:** This repository is a fork of the original [Serverless Boilerplate](https://github.com/ixartz/Serverless-Boilerplate-Express-TypeScript) by [CreativeDesignsGuru](https://creativedesignsguru.com) / [ixartz](https://github.com/ixartz). This fork demonstrates integrating **Fastify** instead of Express, showcasing how to build serverless applications with Fastify's performance-oriented architecture.
+
 <p align="center">
   <a href="https://creativedesignsguru.com/"><img src="https://creativedesignsguru.com/assets/images/themes/serverless-boilerplate-expressjs-typescript.png" alt="Serverless Boilerplate Banner"></a>
 </p>
 
-🚀 Serverless Boilerplate is starter code for your backend and REST API based on Serverless framework with Fastify, TypeScript, Prisma and MongoDB. ⚡️ Made with Serverless framework, Live reload, Offline support, Fastify, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Commitlint, Dotenv, VSCode.
+🚀 Serverless Boilerplate is starter code for your backend and REST API based on Serverless framework with **Fastify**, TypeScript, Prisma and MongoDB. ⚡️ Made with Serverless framework, Live reload, Offline support, Fastify, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Commitlint, Dotenv, VSCode.
+
+## 🔄 Fastify Integration Highlights
+
+This fork specifically showcases:
+- **High Performance**: Fastify's superior performance compared to Express
+- **Schema Validation**: Built-in JSON schema validation
+- **Type Safety**: Enhanced TypeScript integration with Fastify
+- **Plugin Architecture**: Modular design with Fastify's plugin system
+- **Async/Await First**: Native async/await support optimized for serverless
 
 Clone this project and use it to create your own backend.
 
